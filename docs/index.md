@@ -2,6 +2,7 @@
 
 - [axum-rust-nutshell](axum-rust-nutshell.md)
 
+![alt text](assets/images/image.png)
 
 ```shell
 # mkdocs serve
