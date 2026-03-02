@@ -1,0 +1,114 @@
+site_name: Coding Is Meditation
+site_description: Deep, practical docs on backend, systems, and engineering mindset
+site_url: https://codingismeditation.github.io/
+nav:
+  - Home: index.md
+  - Interview:
+    - Index: interview/index.md
+    - Networking: interview/networking/index.md
+  - About: about.md
+  - Contributing: contributing.md
+  # - Backend:
+  #     - Roadmap: backend/roadmap.md
+  #     - Databases: backend/databases.md
+  # - DevOps:
+  #     - Docker: devops/docker.md 
+theme:
+  custom_dir: overrides
+  name: material
+  logo: assets/images/logo.png
+  favicon: assets/images/favicon.ico
+  palette:
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: amber
+      accent: yellow
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - scheme: default
+      primary: black
+      accent: yellow
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+  features:
+    - content.code.select
+    - content.code.annotate 
+    - content.code.copy
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.instant.preview
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.prune
+    - toc.integrate
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - search.share
+    - header.autohide
+    - navigation.footer
+extra:
+  parent_site:
+    name: CodingIsMeditation
+    url: https://codingismeditation.github.io/
+  social:
+    - icon: fontawesome/solid/house
+      link: https://codingismeditation.github.io/
+      name: Home
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/@CodingIsMeditation
+      name: CodingIsMeditation YouTube Channel
+    - icon: fontawesome/brands/twitter
+      link: https://x.com/siddhantbuilds
+      name: Author's Twitter
+    - icon: fontawesome/brands/github
+      link: https://github.com/codingismeditation
+      name: Author's GitHub
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/siddhantbuilds/
+      name: Author's LinkedIn
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:siddhant.bali.work@gmail.com
+      name: Author's Email
+  generator: false
+plugins:
+  - search
+  - offline
+  - social:
+      cards_layout_dir: layouts
+      cards_layout: custom
+      debug: true
+
+  - git-revision-date-localized:
+      enable_creation_date: true
+      fallback_to_build_date: true
+      enable_parallel_processing: false
+
+  # - git-committers:
+  #     repository: codingismeditation/codingismeditation.github.io
+  #     branch: main
+repo_url: https://github.com/kintsugi-programmer
+repo_name: kintsugi-programmer
+copyright: Copyright &copy;2026 Siddhant Bali. All rights reserved.
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
