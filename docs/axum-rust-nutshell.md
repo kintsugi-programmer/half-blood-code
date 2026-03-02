@@ -56,6 +56,7 @@ To run the Axum web server, you need an asynchronous runtime and a TCP Listener.
 ### The Tokio Async Runtime
 
 **Tokio** is the most popular async runtime in the Rust ecosystem. Because you need to await the creation of a TCP listener, the main function must be marked as `async`.
+
 * **The `#[tokio::main]` macro:** Transforms the `async fn main` into a regular main function and sets up all the necessary Tokio runtime components behind the scenes so manual setup is not required. It allows the use of `async`/`await` everywhere.
 
 ### Binding the TCP Listener and Serving the App

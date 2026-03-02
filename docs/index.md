@@ -1,8 +1,7 @@
 # half-blood-code
 
 - [axum-rust-nutshell](axum-rust-nutshell.md)
-
-![alt text](assets/images/image.png)
+- [ec2-file-download](ec2-file-download.md)
 
 ```shell
 # mkdocs serve
@@ -14,3 +13,5 @@ git add .
 git commit -m "deploy: update GitHub Pages"
 git push
 ```
+
+![alt text](assets/images/image.png)
