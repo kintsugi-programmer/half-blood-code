@@ -405,6 +405,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    axum-rust-nutshell
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="axum-rust-nutshell.html" class="md-nav__link md-nav__link--active">
         
   
@@ -421,6 +439,264 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-axum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction to Axum
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-the-router" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting Up the Router
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Up the Router">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-create_app-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The create_app Function
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chaining-route-calls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chaining Route Calls
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-the-async-runtime-and-tcp-listener" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting Up the Async Runtime and TCP Listener
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Up the Async Runtime and TCP Listener">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-tokio-async-runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Tokio Async Runtime
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binding-the-tcp-listener-and-serving-the-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Binding the TCP Listener and Serving the App
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#centralized-error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Centralized Error Handling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Centralized Error Handling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defining-the-apierror-enum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Defining the ApiError Enum
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementing-the-intoresponse-trait" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementing the IntoResponse Trait
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Endpoints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Application Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-health-check-endpoint-health" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Health Check Endpoint (/health)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-list-users-endpoint-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. List Users Endpoint (/users)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-get-user-endpoint-usersid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Get User Endpoint (/users/:id)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-the-web-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing the Web Server
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing the Web Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-the-health-check-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing the Health Check Endpoint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-the-apierror-intoresponse-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing the ApiError IntoResponse Implementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-and-hosting-note-savala" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment and Hosting Note (Savala)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -453,6 +729,253 @@
   
     
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-axum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction to Axum
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-the-router" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting Up the Router
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Up the Router">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-create_app-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The create_app Function
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chaining-route-calls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chaining Route Calls
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-the-async-runtime-and-tcp-listener" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting Up the Async Runtime and TCP Listener
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Up the Async Runtime and TCP Listener">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-tokio-async-runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Tokio Async Runtime
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binding-the-tcp-listener-and-serving-the-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Binding the TCP Listener and Serving the App
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#centralized-error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Centralized Error Handling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Centralized Error Handling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defining-the-apierror-enum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Defining the ApiError Enum
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementing-the-intoresponse-trait" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementing the IntoResponse Trait
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Endpoints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Application Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-health-check-endpoint-health" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Health Check Endpoint (/health)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-list-users-endpoint-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. List Users Endpoint (/users)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-get-user-endpoint-usersid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Get User Endpoint (/users/:id)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-the-web-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing the Web Server
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing the Web Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-the-health-check-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing the Health Check Endpoint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-the-apierror-intoresponse-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing the ApiError IntoResponse Implementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-and-hosting-note-savala" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment and Hosting Note (Savala)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -491,7 +1014,6 @@
   </iframe>
 </div>
 
-<h1 id="creating-an-axum-web-server-in-rust">Creating an Axum Web Server in Rust</h1>
 <h2 id="introduction-to-axum">Introduction to Axum</h2>
 <p><strong>Axum</strong> is a web framework in Rust specifically designed for creating web servers with a focus on <strong>ergonomics</strong> and <strong>modularity</strong>. </p>
 <ul>
@@ -734,12 +1256,6 @@
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
-          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
-  Back to top
-</button>
-        
       </main>
       
         <footer class="md-footer">
@@ -847,7 +1363,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["content.code.select", "content.code.annotate", "content.code.copy", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.instant.preview", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.prune", "navigation.top", "search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.footer"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["content.code.select", "content.code.annotate", "content.code.copy", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.instant.preview", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.prune", "search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.footer"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
