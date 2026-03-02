@@ -13,8 +13,6 @@
   </iframe>
 </div>
 
-# Creating an Axum Web Server in Rust
-
 ## Introduction to Axum
 
 **Axum** is a web framework in Rust specifically designed for creating web servers with a focus on **ergonomics** and **modularity**. 

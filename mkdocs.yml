@@ -52,7 +52,7 @@ theme:
     - navigation.path
     - navigation.prune
     # - toc.integrate
-    - navigation.top
+    # - navigation.top
     - search.suggest
     - search.highlight
     - search.share
