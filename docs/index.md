@@ -1,26 +1,15 @@
----
-title: Backend Engineering Roadmap
-description: Learn backend engineering from first principles with real-world system design.
-keywords:
-  - backend engineering
-  - system design
-  - databases
----
+# half-blood-code
 
-# Welcome to MkDocs
+- [axum-rust-nutshell](axum-rust-nutshell.md)
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+```shell
+# mkdocs serve
+# mkdocs build
+# Deploy documentation using:
+mkdocs gh-deploy --force
+# Then commit and sync again if needed:
+git add .
+git commit -m "deploy: update GitHub Pages"
+git push
+```
