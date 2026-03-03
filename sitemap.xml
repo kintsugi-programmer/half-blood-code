@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://codingismeditation.github.io/index.html</loc>
-         <lastmod>2026-03-02</lastmod>
+         <lastmod>2026-03-03</lastmod>
     </url>
     <url>
-         <loc>https://codingismeditation.github.io/axum-rust-nutshell.html</loc>
-         <lastmod>2026-03-02</lastmod>
+         <loc>https://codingismeditation.github.io/axum-rust-webserver-intro.html</loc>
+         <lastmod>2026-03-03</lastmod>
     </url>
     <url>
          <loc>https://codingismeditation.github.io/ec2-file-download.html</loc>
-         <lastmod>2026-03-02</lastmod>
+         <lastmod>2026-03-03</lastmod>
     </url>
 </urlset>

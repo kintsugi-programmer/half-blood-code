@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://codingismeditation.github.io/ec2-file-download.html">
       
       
-        <link rel="prev" href="axum-rust-nutshell.html">
+        <link rel="prev" href="axum-rust-webserver-intro.html">
       
       
       
@@ -396,14 +396,14 @@
   
   
     <li class="md-nav__item">
-      <a href="axum-rust-nutshell.html" class="md-nav__link">
+      <a href="axum-rust-webserver-intro.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    axum-rust-nutshell
+    axum-rust-webserver-intro
   
 
     
@@ -943,42 +943,48 @@
 <p><img alt="alt text" src="assets/images/image-2.png" /></p>
 <h2 id="1-connecting-to-an-ec2-instance">1. Connecting to an EC2 Instance</h2>
 <h3 id="method-1-ec2-instance-connect-browser-ssh">Method 1: EC2 Instance Connect (Browser SSH)</h3>
-<p>Follow these steps to establish a connection:
-1. Open the <strong>AWS Console</strong>.
-2. Go to: <strong>EC2</strong> → <strong>Instances</strong>.
-3. Select your running instance.
-4. Click <strong>Connect</strong>.
-5. Choose <strong>EC2 Instance Connect</strong>.
-6. Click <strong>Connect</strong>.</p>
+<p>Follow these steps to establish a connection:</p>
+<ol>
+<li>Open the <strong>AWS Console</strong>.</li>
+<li>Go to: <strong>EC2</strong> → <strong>Instances</strong>.</li>
+<li>Select your running instance.</li>
+<li>Click <strong>Connect</strong>.</li>
+<li>Choose <strong>EC2 Instance Connect</strong>.</li>
+<li>Click <strong>Connect</strong>.</li>
+</ol>
 <p>You now have terminal access inside the browser.</p>
 <h3 id="method-2-ssh-using-a-pem-key-from-local-machine">Method 2: SSH Using a PEM Key (From Local Machine)</h3>
-<p>Use the following command from your terminal:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ssh<span class="w"> </span>-i<span class="w"> </span>my-key.pem<span class="w"> </span>ubuntu@12.34.56.78
+<p>Use the following command from your terminal:</p>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ssh<span class="w"> </span>-i<span class="w"> </span>my-key.pem<span class="w"> </span>ubuntu@12.34.56.78
 </span></code></pre></div>
-<strong>Requirements:</strong>
-*   The correct <code>.pem</code> file.
-*   Port 22 open in the <strong>Security Group</strong>.
-*   A public IPv4 address available.</p>
+<strong>Requirements:</strong></p>
+<ul>
+<li>The correct <code>.pem</code> file.</li>
+<li>Port 22 open in the <strong>Security Group</strong>.</li>
+<li>A public IPv4 address available.</li>
+</ul>
 <h2 id="2-checking-mysql-server-status">2. Checking MySQL Server Status</h2>
-<p>Verify if the database is running using this command:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>mysql
+<p>Verify if the database is running using this command:</p>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>mysql
 </span></code></pre></div>
-<strong>Expected Output:</strong>
-*   Active: <strong>active (running)</strong>.
-*   Status: <strong>Server is operational</strong>.</p>
-<p><strong>If MySQL Is Not Running:</strong>
-Start the service manually:
+<strong>Expected Output:</strong></p>
+<ul>
+<li>Active: <strong>active (running)</strong>.</li>
+<li>Status: <strong>Server is operational</strong>.</li>
+</ul>
+<p><strong>If MySQL Is Not Running:</strong></p>
+<p>Start the service manually:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>mysql
-</span></code></pre></div></p>
+</span></code></pre></div>
 <h2 id="3-locating-project-and-database-credentials">3. Locating Project and Database Credentials</h2>
 <p>Assume your project folder is located at <code>/var/www/html/sampleapp</code>.</p>
-<p>Navigate to the project directory:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">cd</span><span class="w"> </span>/var/www/html/sampleapp
+<p>Navigate to the project directory:</p>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">cd</span><span class="w"> </span>/var/www/html/sampleapp
 </span></code></pre></div>
-View the environment file:
+View the environment file:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>cat<span class="w"> </span>.env
 </span></code></pre></div>
-Look for the following variables:
+<p>Look for the following variables:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>DB_CONNECTION=mysql
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>DB_HOST=127.0.0.1
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>DB_PORT=3306
@@ -986,7 +992,7 @@ Look for the following variables:
 </span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>DB_USERNAME=sampleuser
 </span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>DB_PASSWORD=strongpassword
 </span></code></pre></div>
-These credentials are used to create the database backup.</p>
+<p>These credentials are used to create the database backup.</p>
 <h2 id="4-creating-a-database-backup-sql-dump">4. Creating a Database Backup (SQL Dump)</h2>
 <h3 id="dump-a-specific-database">Dump a Specific Database</h3>
 <p>Run this command to create a targeted backup:
@@ -1004,11 +1010,13 @@ This creates <code>sampledb.sql</code> in the current directory.</p>
 Create the ZIP file:
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>zip<span class="w"> </span>-r<span class="w"> </span>sampleapp-backup.zip<span class="w"> </span>sampleapp
 </span></code></pre></div>
-<strong>Explanation of parameters:</strong>
-*   <code>zip</code> → Creates the archive.
-*   <code>-r</code> → Recursive flag (includes all subfolders).
-*   <code>sampleapp-backup.zip</code> → The output file name.
-*   <code>sampleapp</code> → The folder being zipped.</p>
+<strong>Explanation of parameters:</strong></p>
+<ul>
+<li><code>zip</code> → Creates the archive.</li>
+<li><code>-r</code> → Recursive flag (includes all subfolders).</li>
+<li><code>sampleapp-backup.zip</code> → The output file name.</li>
+<li><code>sampleapp</code> → The folder being zipped.</li>
+</ul>
 <h2 id="6-move-backup-files-to-home-directory">6. Move Backup Files to Home Directory</h2>
 <p>Move the files for easy download:
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>sudo<span class="w"> </span>cp<span class="w"> </span>sampleapp-backup.zip<span class="w"> </span>/home/ubuntu/
@@ -1023,10 +1031,12 @@ Verify the transfer:
 <h2 id="7-downloading-files-from-ec2">7. Downloading Files from EC2</h2>
 <h3 id="method-1-temporary-python-http-server">Method 1: Temporary Python HTTP Server</h3>
 <p><strong>Step 1 — Open Port 8000 (Temporary)</strong>
-In <strong>Security Group</strong> → <strong>Inbound rules</strong>, add:
-*   <strong>Type</strong>: Custom TCP.
-*   <strong>Port</strong>: 8000.
-*   <strong>Source</strong>: 0.0.0.0/0.</p>
+In <strong>Security Group</strong> → <strong>Inbound rules</strong>, add:</p>
+<ul>
+<li><strong>Type</strong>: Custom TCP.</li>
+<li><strong>Port</strong>: 8000.</li>
+<li><strong>Source</strong>: 0.0.0.0/0.</li>
+</ul>
 <p>Save changes.</p>
 <p><strong>Step 2 — Start Server</strong>
 Run the server with these commands:
@@ -1035,27 +1045,33 @@ Run the server with these commands:
 </span></code></pre></div>
 The server runs at: <code>http://0.0.0.0:8000/</code>.</p>
 <p><strong>Step 3 — Download in Browser</strong>
-Open these links to download:
-*   <code>http://12.34.56.78:8000/sampleapp-backup.zip</code>.
-*   or <code>http://12.34.56.78:8000/sampledb.sql</code>.</p>
+Open these links to download:</p>
+<ul>
+<li><code>http://12.34.56.78:8000/sampleapp-backup.zip</code>.</li>
+<li>or <code>http://12.34.56.78:8000/sampledb.sql</code>.</li>
+</ul>
 <p><strong>Step 4 — Stop Server</strong>
 Press <strong>CTRL + C</strong>.</p>
 <p><strong>Step 5 — Remove Port 8000</strong>
 Go back to: <strong>EC2</strong> → <strong>Security Groups</strong> → <strong>Edit inbound rules</strong>.
 Remove port 8000.</p>
 <h3 id="method-2-secure-download-using-scp">Method 2: Secure Download Using SCP</h3>
-<p>From your local machine, run:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>scp<span class="w"> </span>-i<span class="w"> </span>my-key.pem<span class="w"> </span>ubuntu@12.34.56.78:/home/ubuntu/sampleapp-backup.zip<span class="w"> </span>.
+<p>From your local machine, run:</p>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>scp<span class="w"> </span>-i<span class="w"> </span>my-key.pem<span class="w"> </span>ubuntu@12.34.56.78:/home/ubuntu/sampleapp-backup.zip<span class="w"> </span>.
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>scp<span class="w"> </span>-i<span class="w"> </span>my-key.pem<span class="w"> </span>ubuntu@12.34.56.78:/home/ubuntu/sampledb.sql<span class="w"> </span>.
 </span></code></pre></div>
 This downloads files securely without opening extra ports.</p>
 <h2 id="8-common-errors-and-solutions">8. Common Errors and Solutions</h2>
-<p><strong>Error: Access denied for user ‘root’@‘localhost’</strong>
-*   <strong>Cause</strong>: Root password unknown, or production uses a separate database user.
-*   <strong>Fix</strong>: Use database credentials from the <code>.env</code> file.</p>
-<p><strong>Error: Permission denied (publickey)</strong>
-*   <strong>Cause</strong>: Wrong or missing <code>.pem</code> key.
-*   <strong>Fix</strong>: Use correct key file and ensure port 22 is open.</p>
+<p><strong>Error: Access denied for user ‘root’@‘localhost’</strong></p>
+<ul>
+<li><strong>Cause</strong>: Root password unknown, or production uses a separate database user.</li>
+<li><strong>Fix</strong>: Use database credentials from the <code>.env</code> file.</li>
+</ul>
+<p><strong>Error: Permission denied (publickey)</strong></p>
+<ul>
+<li><strong>Cause</strong>: Wrong or missing <code>.pem</code> key.</li>
+<li><strong>Fix</strong>: Use correct key file and ensure port 22 is open.</li>
+</ul>
 <h2 id="9-safe-production-practices">9. Safe Production Practices</h2>
 <ul>
 <li>Do not leave temporary ports open.</li>
@@ -1065,13 +1081,17 @@ This downloads files securely without opening extra ports.</p>
 <li>Remove temporary services after use.</li>
 </ul>
 <h2 id="10-final-backup-checklist">10. Final Backup Checklist</h2>
-<p>After completion, you should have locally:
-*   <code>sampleapp-backup.zip</code>.
-*   <code>sampledb.sql</code>.</p>
-<p><strong>This Ensures:</strong>
-*   Full project recovery.
-*   Full database recovery.
-*   Production safety.</p>
+<p>After completion, you should have locally:</p>
+<ul>
+<li><code>sampleapp-backup.zip</code>.</li>
+<li><code>sampledb.sql</code>.</li>
+</ul>
+<p><strong>This Ensures:</strong></p>
+<ul>
+<li>Full project recovery.</li>
+<li>Full database recovery.</li>
+<li>Production safety.</li>
+</ul>
 
 
 
@@ -1094,7 +1114,7 @@ This downloads files securely without opening extra ports.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 2, 2026 20:31:14 UTC">March 2, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 3, 2026 07:12:58 UTC">March 3, 2026</span>
   </span>
 
     
@@ -1133,7 +1153,7 @@ This downloads files securely without opening extra ports.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="axum-rust-nutshell.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: axum-rust-nutshell">
+          <a href="axum-rust-webserver-intro.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: axum-rust-webserver-intro">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1143,7 +1163,7 @@ This downloads files securely without opening extra ports.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                axum-rust-nutshell
+                axum-rust-webserver-intro
               </div>
             </div>
           </a>
