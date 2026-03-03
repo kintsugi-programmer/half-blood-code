@@ -1,4 +1,4 @@
-# axum-rust-nutshell
+# axum-rust-webserver-intro
 
 ![alt text](assets/images/image-1.png)
 

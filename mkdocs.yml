@@ -4,7 +4,7 @@ site_url: https://codingismeditation.github.io/
 nav:
   - Home: 
     - Index: index.md
-    - axum-rust-nutshell: axum-rust-nutshell.md
+    - axum-rust-webserver-intro: axum-rust-webserver-intro.md
     - ec2-file-download: ec2-file-download.md
   # - Interview:
   #   - Index: interview/index.md
